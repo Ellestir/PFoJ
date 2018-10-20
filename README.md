@@ -1,2 +1,2 @@
 # PFoJ
-Peoples Front of Judea
+Peoples Front of Judea.
