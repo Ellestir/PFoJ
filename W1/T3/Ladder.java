@@ -29,7 +29,6 @@ public class Ladder
 
     	
     	System.out.println(ladderAufgerundet);
-    	System.out.println(ladderLength);
     	
     	read.close();
     }
