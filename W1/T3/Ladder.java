@@ -1,18 +1,17 @@
-package oop;
-
 /**
 * Advanced Object Oriented Programming with Java, WS 2018
-* Problem: <Add problem here>
-* Link: <Add link here>
+* Problem: Ladder
+* Link: open.kattis.com/problems/ladder
 * @author Fabian Grun (1230840)
 * @author Selin Can (1101908)
 * @author Tom Rosenberger (1208597)
-* @version 1.0, <Add date here>
+* @version 1.0, 21.10.2018
 *
 * Method : <Add method name>
 * Status: <Add status>
 * Runtime: <Add runtime>
 */
+package oop;
 
 import java.util.Scanner;
 
@@ -27,12 +26,11 @@ public class Ladder
     	
     	double ladderLength=h/Math.sin(v);
     	int ladderAufgerundet = (int) (ladderLength+1);
-    	//ladderAufgerundet++;
+
     	
     	System.out.println(ladderAufgerundet);
     	System.out.println(ladderLength);
     	
     	read.close();
-        return;
     }
 }
