@@ -27,7 +27,7 @@ public class StuckInATimeLoop
     	for (int i=n; i>0; i--) {
     		
     		System.out.print(counter++);
-    		System.out.print(". Abracadabra\n");
+    		System.out.print(" Abracadabra\n");
     	}
     	    	
     	read.close();
