@@ -30,5 +30,9 @@ public class TakeTwoStones {
 			System.out.print("Bob");
 		}
 		
+		read.close();
+		
+		return;
+		
     }
 }
