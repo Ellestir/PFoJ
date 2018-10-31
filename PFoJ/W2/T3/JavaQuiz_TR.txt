@@ -1,0 +1,31 @@
+What does a main method declaration in Java look like?
+- static void main(String[] args)
+- public void main()
+- static public void main(String[] args)
+- public static void main()
+- public static void main(String[] args)
+
+
+How does a declaration of an extending Java Class look like?
+- class Test extends SuperTest
+- class Test : public SuperTest
+- public class Test :: SuperTest
+
+
+Which Java variable modifier is used to make the variable inheritable so encapsulation is still there?
+- public
+- private
+- protected
+- virtual
+- friend
+
+How to create an Object in Java?
+- ClassName object = new ClassName();
+- ClassName object = ClassName();
+- ClassName object;
+
+How can an object be used in Java?
+- object.method()
+- object->method()
+- object->variable
+- object.variable
