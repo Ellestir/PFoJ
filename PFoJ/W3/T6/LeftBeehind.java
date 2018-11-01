@@ -19,7 +19,7 @@ public class LeftBeehind {
 	public static void main(String[] args){
 		Scanner read = new Scanner(System.in);
 		int a = read.nextInt() , b = read.nextInt(), count = 15;
-		if(a != 0 && b !=0) {
+		if(a != 0 || b !=0) {
 			do {
 				if(a + b == 13){
 					System.out.print("Never speak again.\n");
@@ -38,7 +38,7 @@ public class LeftBeehind {
 				a = read.nextInt();
 				b = read.nextInt();
 				count--;
-			}while(a != 0 &&  b != 0 && count != 0);
+			}while((a != 0 ||  b != 0) && count != 0);
 		}
 		read.close();
 		return;
