@@ -1,7 +1,7 @@
 package T6;
 
-import Java.util.Scanner;
-import java.lang.*;
+import java.util.Scanner;
+import java.lang.Math;
 
 class aRealChallenge
 {
@@ -11,8 +11,8 @@ class aRealChallenge
         long size = read.nextLong();
         read.close();
         
-        long double perimeter = 0.0;
-        perimeter = Math.sqrt(size.doubleValue());
+        double perimeter= 0.0;
+        perimeter = Math.sqrt((double)size);
         perimeter *= 4.0;
         System.out.println(perimeter);
         
