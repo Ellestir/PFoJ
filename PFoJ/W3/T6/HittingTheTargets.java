@@ -35,20 +35,13 @@ public class HittingTheTargets {
     		x2 = c;
     		y2 = d;
     		}
-    		public Rectangle() {
-    		x1 = 0;
-    		y1 = 0;
-    		x2 = 0;
-    		y2 = 0;
-    		}
     		public boolean hit(int a, int b) {
-    			if(a > x1 && a < x2 && b > y1 && b < y2) {
+    			if((a >= x1) && (a <= x2) && (b >= y1) && (b <= y2)) {
     				return true;
     			}else {
     				return false;
     			}
     		}
-    	
     	}
     	class Circle{
     		private int x, y, r;
@@ -58,14 +51,8 @@ public class HittingTheTargets {
     			y = b;
     			r = c;
     		}
-    		public Circle() {
-    			x = 0;
-    			y = 0;
-    			r = 0;
-    		}
-    		
     		public boolean hit(int a, int b) {
-    			if(Math.sqrt(((a - x) * (a - x)) + ((b - y) * (b - y))) < r) {
+    			if(Math.sqrt(((a - x) * (a - x)) + ((b - y) * (b - y))) <= r) {
     				return true;
     			}else {
     				return false;
@@ -80,10 +67,40 @@ public class HittingTheTargets {
     	rect = new Rectangle[30];
     	circ = new Circle[30];
     	int c_rect = 0, c_circ = 0, num = read.nextInt();
-    	Byte s;
-    	for(int i = 0; i < num ; i++) {
-    		s = read.nextByte();
-    		System.out.print(s);
+    	String s = read.nextLine();
+    	
+    	while(num-- > 0) {
+    		s = read.nextLine();
+    		String[] s_arr = s.split(" ");
+    		if(s_arr[0].equals("rectangle")) {
+    			rect[c_rect++] = new Rectangle(Integer.parseInt(s_arr[1]), Integer.parseInt(s_arr[2]), Integer.parseInt(s_arr[3]), Integer.parseInt(s_arr[4]));
+    		
+    		}
+    		if(s_arr[0].equals("circle")) {
+    			circ[c_circ++] = new Circle(Integer.parseInt(s_arr[1]), Integer.parseInt(s_arr[2]), Integer.parseInt(s_arr[3]));
+    		}
+    		
+        	
+    	}
+    	int shot = read.nextInt(), count, shot_x, shot_y;
+    	
+    	while(shot-- > 0) {
+    		count = 0;
+    		shot_x = read.nextInt();
+    		shot_y = read.nextInt();
+    		for(int i = 0 ; i < c_rect ; i++) {
+    			if(rect[i].hit(shot_x, shot_y)) {
+    				count++;
+    			}
+    		}
+    		for(int i = 0 ; i < c_circ ; i++) {	
+    			if(circ[i].hit(shot_x, shot_y)) {
+    				count++;
+    			}
+    			
+    		}
+    		System.out.print(count + "\n");
+    		
     	}
     	
     	
