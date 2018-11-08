@@ -26,13 +26,13 @@ class IHaveBeenEverywhereMan
         for (int i = 0; i < testcases; i++)
         {
             int trips = read.nextInt();
-            List<String> listWithDuplicates = new List<String>();
-            for (int j = 0; j < trips; j++)
+            List<String> listWithDuplicates = new ArrayList<String>();
+            for (int j = -1; j < trips; j++)
             {
                 listWithDuplicates.add(read.nextLine());
             }
-            List<Integer> listWithoutDuplicates = new ArrayList<>(new HashSet<>(listWithDuplicates));
-            int size = listWithoutDuplicates.size();
+            List<String> listWithoutDuplicates = new ArrayList<String>(new HashSet<>(listWithDuplicates));
+            int size = listWithoutDuplicates.size() - 1;
             System.out.println(size);
         }
         
