@@ -27,13 +27,31 @@ public class boatparts {
 		int parts = read.nextInt();
 		int days = read.nextInt();
 		
-		String [] inputList = new String[parts];
+		String [] inputList = new String[days];
 		
-		for (int i=0; i<days; i++) {
-			inputList[i] = read.nextLine();			
+		inputList[0] = read.nextLine();		
+		int usedParts=1;
+		
+		for (int i=1; i<days; i++) {
+			
+			inputList[i] = read.nextLine();		
+				
+			for (int j=i; j>0; j--) {
+				int x=0;
+				if (inputList[i]==inputList[j]) {
+					x++;
+				}
+				if (x<0) {
+					usedParts++;
+				}
+			}
+				
+			if (usedParts<parts) { 
+				System.out.println("paradox avoided");
+			} else {
+				System.out.print(i);
+			}
 		}
-		
-		
 		
 		
 		read.close();
