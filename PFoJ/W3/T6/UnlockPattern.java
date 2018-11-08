@@ -20,6 +20,7 @@ import java.util.Scanner;
 public class UnlockPattern {
 	public static void main(String[] args)
     {
+		
 		Scanner read = new Scanner(System.in);
 		
 		double[] x, y;
@@ -28,7 +29,7 @@ public class UnlockPattern {
 		int num;
 		double len = 0;
 		
-		for(int i = 0; i < 3 ; i++) {
+		for(int i = 0; i < 3 ; i++) {		//save coordinates
 			for(int j = 0; j < 3; j++) {
 				num = read.nextInt();
 				x[num - 1] = (double) j;
