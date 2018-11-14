@@ -1,7 +1,7 @@
 /**
 * Advanced Object Oriented Programming with Java, WS 2018
 * Problem: Cryptographers Conundrum
-* Link: https://open.kattis.com/contests/ntt8xa/problems/conundrum
+* Link: https://open.kattis.com/problems/conundrum
 * @author Fabian Grun (1230840)
 * @author Selin Can (1101908)
 * @author Tom Rosenberger (1208597)
