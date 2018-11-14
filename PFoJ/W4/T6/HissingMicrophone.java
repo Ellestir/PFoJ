@@ -12,7 +12,7 @@
 * Runtime: <Add runtime>
 */
 
-package T4;
+package T6;
 
 import java.util.Scanner;
 import java.lang.String;
