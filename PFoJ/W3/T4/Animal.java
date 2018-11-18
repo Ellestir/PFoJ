@@ -1,6 +1,6 @@
 /**
 * Advanced Object Oriented Programming with Java, WS 2018
-* Problem: Inheritance/Polymorphism
+* Problem: Overriding and Hiding Methods
 * Link: exercises03.pdf
 * @author Fabian Grun (1230840)
 * @author Selin Can (1101908)
@@ -12,13 +12,13 @@
 * Runtime: <Add runtime>
 */
 
-package T2;
+package T4;
 
-public class TestBikes {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+public class Animal {
+    public static void testClassMethod() {
+        System.out.println("The static method in Animal");
+    }
+    public void testInstanceMethod() {
+        System.out.println("The instance method in Animal");
+    }
 }

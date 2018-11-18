@@ -22,6 +22,7 @@ public class RectanglePlusDemo
 		RectanglePlus objectB = new RectanglePlus(new Point(1, 1));
 		RectanglePlus objectC = new RectanglePlus(2, 3);
 		RectanglePlus objectD = new RectanglePlus(new Point(2, 2), 3, 1);
+		RectanglePlus objectE;
 		
 		System.out.println("Object A Area: " + objectA.getArea());
 		System.out.println("Object B Area: " + objectB.getArea());
@@ -49,5 +50,12 @@ public class RectanglePlusDemo
 		System.out.println("Object D equals Object C: " + objectD.equals(objectC));
 		objectA.move(2, 5);
 		System.out.println("Object A was moved to 2 5.");
+		try {
+			objectE = objectA.clone();
+			System.out.println("Object E Class: " + objectE.getClass());
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

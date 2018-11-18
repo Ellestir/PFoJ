@@ -15,11 +15,17 @@
 package T1;
 
 public class RectanglePlus 
-implements Relatable 
+implements Relatable, Cloneable
 {
 	public int width = 0;
 	public int height = 0;
 	public Point origin;
+	
+	public RectanglePlus clone() throws CloneNotSupportedException
+	{
+		RectanglePlus clonedObj = (RectanglePlus) super.clone();
+		return clonedObj;
+	}
 	
 	// four constructors
 	public RectanglePlus() 

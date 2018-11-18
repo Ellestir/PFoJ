@@ -14,6 +14,8 @@
 
 package T2;
 
+import T2.Bicycle;
+
 public class MountainBike extends Bicycle 
 {
     // the MountainBike subclass has
