@@ -12,12 +12,52 @@
 * Runtime: <Add runtime>
 */
 
-
 package T6;
 
 import java.util.Scanner;
 
 public class BobbysBet {
+	
+	public double binomialCoefficient (int n, int k)
+	{
+		System.out.println("Method binomialCoefficient started with Input" + " n " + n + " k " + k);
+		double a = 0;
+		System.out.println("Method binomialCoefficient finished with returning " + a);
+		return a;
+	}
+	
+	public double probLose (int sides, int to_reach) 
+	{
+		System.out.println("Method probLose started with Input" + " sides " + sides + " to_reach " + to_reach);
+		double a = ((double) to_reach - 1) / (double) sides;
+		System.out.println("Method probLose finished with returning " + a);
+		return a;
+	}
+	
+	public double probWin (int sides, int to_reach)
+	{
+		System.out.println("Method probWin started with Input" + " sides " + sides + " to_reach " + to_reach);
+		double a = 1 - probLose(sides, to_reach);
+		System.out.println("Method probWin finished with returning " + a);
+		return a;
+	}
+	
+	public double probWinNOfM (int sides, int to_reach, int n, int m)
+	{
+		System.out.println("Method probWinNOfM started with Input" + " sides " + sides + " to_reach " + to_reach + " n " + n + " m " + m);
+		double a = 0;
+		System.out.println("Method probWinNOfM finished with returning " + a);
+		return a;
+	}
+	
+	public double probWinMinNOfM (int sides, int to_reach, int n, int m)
+	{
+		System.out.println("Method probWinMinNOfM started with Input" + " sides " + sides + " to_reach " + to_reach + " n " + n + " m " + m);
+		double a = 0;
+		System.out.println("Method probWinMinNOfM finished with returning " + a);
+		return a;
+	}
+	
     public static void main(String[] args)
     {
     	Scanner read = new Scanner(System.in);
@@ -52,6 +92,7 @@ public class BobbysBet {
 	    		*/
     		
     		//calculate probability to win
+    		/*
     		double	prob_lose = ( (double)to_reach - 1) / sides;
     		System.out.println(prob_lose);
     		double	prob_win = 1 - prob_lose;
@@ -70,9 +111,10 @@ public class BobbysBet {
     			for(int k = 1; k <= (max_count - j) ; k++) {
     				factor = factor / (double)k;
     			}
-    			prob_sum = prob_sum + ( Math.pow( prob_win , j ) * Math.pow( prob_lose, ( (double)max_count - j ) ) * factor/* needs binomial coefficient here*/ );
+    			prob_sum = prob_sum + ( Math.pow( prob_win , j ) * Math.pow( prob_lose, ( (double)max_count - j ) ) * factor );
     			
     		}
+    		*/
     		
     		//output
     		if( (( prob_sum * (double)profit ) - (1 - prob_sum) ) > 0)
