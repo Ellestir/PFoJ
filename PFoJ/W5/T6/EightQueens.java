@@ -105,12 +105,12 @@ public class EightQueens {
     		}
     	}
     	
-    	for ( int i = 7 ; i >= 0 ; i--)
+    	for ( int i = 0 ; i < 8 ; i++)
     	{
     		sum = 0;
     		for ( int j = 0 ; j < i ; j++ )
     		{
-    			sum = sum + board[i - j][j];
+    			sum = sum + board[i - j][7 - j];
     		}
     		if(sum > 1)
     		{
@@ -120,10 +120,10 @@ public class EightQueens {
     		}
     	}
     	
-    	for ( int i = 7 ; i >= 0 ; i--)
+    	for ( int i = 0 ; i < 8 ; i++)
     	{
     		sum = 0;
-    		for ( int j = 7 ; j >= 0 ; j-- )
+    		for ( int j = 0 ; j < i ; j++ )
     		{
     			sum = sum + board[j][i - j];
     		}
