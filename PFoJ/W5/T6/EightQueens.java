@@ -23,8 +23,7 @@ public class EightQueens {
     	Scanner read = new Scanner ( System.in );
     	
     	int[][] board = new int[8][8];
-    	int sum;
-    	
+    	int count = 0;
     	
     	//input
     	for ( int i = 0 ; i < 8 ; i++ )
@@ -34,6 +33,7 @@ public class EightQueens {
     			if(s.charAt(j) == '*')
     			{
     				board[j][i] = 1;
+    				count++;
     			}
     			else 
     			{
@@ -41,14 +41,20 @@ public class EightQueens {
     			}
     		}
     	}
-
-    	//check rows
-    	for ( int i = 0 ; i < 8 ; i++)
+    	
+    	if ( count != 8 )
     	{
-    		sum = 0;
-    		for( int j = 0 ; j < 8 ; j++ )
+    		System.out.println("invalid");
+			read.close();
+			return;
+		}
+    	//check rows
+    	for ( int row = 0 ; row < 8 ; row++)
+    	{
+    		int sum = 0;
+    		for( int col = 0 ; col < 8 ; col++ )
     		{
-    			sum = sum + board[j][i];
+    			sum = sum + board[col][row];
     		}
     		if(sum > 1)
     		{
@@ -59,12 +65,12 @@ public class EightQueens {
     	}
     	
     	//check columns
-    	for ( int i = 0 ; i < 8 ; i++)
+    	for ( int col = 0 ; col < 8 ; col++)
     	{
-    		sum = 0;
-    		for( int j = 0 ; j < 8 ; j++ )
+    		int sum = 0;
+    		for( int row = 0 ; row < 8 ; row++ )
     		{
-    			sum = sum + board[i][j];
+    			sum = sum + board[col][row];
     		}
     		if(sum > 1)
     		{
@@ -74,13 +80,13 @@ public class EightQueens {
     		}
     	}
     	
-    	
-    	for ( int i = 0 ; i < 8 ; i++)
+    	//up left to down right, upper side
+    	for ( int col = 0 ; col < 8 ; col++)
     	{
-    		sum = 0;
-    		for ( int j = 0 ; j < (8 - i) ; j++ )
+    		int sum = 0;
+    		for ( int row = 0 ; row < (8 - col) ; row++ )
     		{
-    			sum = sum + board[i + j][j];
+    			sum = sum + board[col + row][row];
     		}
     		if(sum > 1)
     		{
@@ -90,12 +96,13 @@ public class EightQueens {
     		}
     	}
     	
-    	for ( int i = 0 ; i < 8 ; i++)
+    	//up left to down right, downward side
+    	for ( int row = 0 ; row < 8 ; row++ )
     	{
-    		sum = 0;
-    		for ( int j = 0 ; j < (8 - i) ; j++ )
+    		int sum = 0;
+    		for ( int col = 0 ; col < (8 - row) ; col++)
     		{
-    			sum = sum + board[j][i + j];
+    			sum = sum + board[col][row + col];
     		}
     		if(sum > 1)
     		{
@@ -105,12 +112,13 @@ public class EightQueens {
     		}
     	}
     	
-    	for ( int i = 0 ; i < 8 ; i++)
+    	//down left to up right, downward side
+    	for ( int col = 0 ; col < 8 ; col++)
     	{
-    		sum = 0;
-    		for ( int j = 0 ; j < i ; j++ )
+    		int sum = 0;
+    		for ( int row = 0 ; row < (8 - col) ; row++ )
     		{
-    			sum = sum + board[i - j][7 - j];
+    			sum = sum + board[col + row][7 - row];
     		}
     		if(sum > 1)
     		{
@@ -120,12 +128,13 @@ public class EightQueens {
     		}
     	}
     	
-    	for ( int i = 0 ; i < 8 ; i++)
+    	//down left to up right, upper side
+    	for ( int row = 0 ; row < 8 ; row++ )
     	{
-    		sum = 0;
-    		for ( int j = 0 ; j < i ; j++ )
+    		int sum = 0;
+    		for ( int col = 0 ; col < (8 - row) ; col++)
     		{
-    			sum = sum + board[j][i - j];
+    			sum = sum + board[col][7 - row - col];
     		}
     		if(sum > 1)
     		{
