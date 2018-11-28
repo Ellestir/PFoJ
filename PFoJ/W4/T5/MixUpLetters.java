@@ -72,7 +72,8 @@ public class MixUpLetters
 	    }
 	    System.out.println(output);
 	}
-
+	
+	//Checks if two words contain the same letters
 	private static boolean equalLetters (String word, String word2) 
 	{
 		List<Character> letters = new ArrayList<Character>();

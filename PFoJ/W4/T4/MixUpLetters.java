@@ -73,7 +73,9 @@ public class MixUpLetters
 	    }
 	    writer.close();
 	}
-
+	
+	//shuffles letters of a word if the length of the word is bigger than 3,
+	//except the first and last letter of the word
 	private static String shuffle(String word) 
 	{
 		StringBuilder shuffledWord = new StringBuilder();
@@ -82,7 +84,7 @@ public class MixUpLetters
         {
             letters.add(letter);
         }
-        if (letters.size() > 2) 
+        if (letters.size() > 3) 
         {
             Collections.shuffle(letters.subList(1, letters.size() - 1));
         }
