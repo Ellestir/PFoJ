@@ -18,6 +18,8 @@ import java.time.*;
 import java.lang.*;
 import java.util.*;
 
+import T4.Cat;
+
 public class SimpleTimeClient implements TimeClient {
     
     private LocalDateTime dateAndTime;
@@ -53,8 +55,49 @@ public class SimpleTimeClient implements TimeClient {
         return dateAndTime.toString();
     }
     
-    public static void main(String... args) {
+    //Used to clone object
+    public TimeClient clone (TimeClient newTimeClient) throws CloneNotSupportedException
+    {
+    	TimeClient clonedObj = (TimeClient) super.clone();
+    	return clonedObj;
+    }
+    //Used to clone object
+    public SimpleTimeClient clone (SimpleTimeClient newTimeClient) throws CloneNotSupportedException
+    {
+    	SimpleTimeClient clonedObj = (SimpleTimeClient) super.clone();
+    	return clonedObj;
+    }
+    
+    
+    public static void main(String... args) 
+    {
         TimeClient myTimeClient = new SimpleTimeClient();
         System.out.println(myTimeClient.toString());
+        System.out.println(myTimeClient.getLocalDateTime());
+        myTimeClient.setTime(0, 0, 0);
+        System.out.println("Set Time to 0!");
+        System.out.println(myTimeClient.toString());
+        myTimeClient.setDate(1, 1, 1);
+        System.out.println("Set Date to 1-1-1!");
+        System.out.println(myTimeClient.toString());
+        myTimeClient.setDateAndTime(1, 1, 1, 0, 0, 0);
+        System.out.println("Set Time to 0 and Date to 1-1-1!");
+        System.out.println(myTimeClient.toString());
+        
+        TimeClient newTimeClient;
+        try 
+        {
+			newTimeClient = myTimeClient.clone(myTimeClient);
+	        System.out.println("Cloned myTimeClient");
+	        System.out.println("myTimeClient equals newTimeClient: " + myTimeClient.equals(newTimeClient));
+        } 
+        catch (CloneNotSupportedException e) 
+        {
+			e.printStackTrace();
+		}
+        System.out.println("Class of myTimeClient: " + myTimeClient.getClass());
+        System.out.println("Hashcode of myTimeClient: " + myTimeClient.hashCode());
+        System.out.println("MyTimeClient in string: " + myTimeClient.toString());
+        
     }
 }

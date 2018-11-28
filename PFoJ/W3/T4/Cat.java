@@ -14,18 +14,48 @@
 
 package T4;
 
-public class Cat extends Animal {
-    public static void testClassMethod() {
+import T02.Bicycle;
+
+public class Cat extends Animal 
+{
+    public static void testClassMethod() 
+    {
         System.out.println("The static method in Cat");
     }
-    public void testInstanceMethod() {
+    public void testInstanceMethod() 
+    {
         System.out.println("The instance method in Cat");
     }
+    public Cat clone (Cat newCat) throws CloneNotSupportedException
+    {
+    	Cat clonedObj = (Cat) super.clone();
+    	return clonedObj;
+    }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         Cat myCat = new Cat();
+        Cat newCat = new Cat();
         Animal myAnimal = myCat;
         Animal.testClassMethod();
         myAnimal.testInstanceMethod();
+        Cat.testClassMethod();
+        myCat.testInstanceMethod();
+        
+        //Clone Cat
+        try
+        {
+        	myCat.clone(newCat);
+        	System.out.println("Cat cloned!");
+        }
+        catch(CloneNotSupportedException e) 
+	    {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        System.out.println(myCat.equals(myAnimal));
+        System.out.println(myCat.getClass());
+        System.out.println(myCat.hashCode());
+        System.out.println(myCat.toString());
     }
 }

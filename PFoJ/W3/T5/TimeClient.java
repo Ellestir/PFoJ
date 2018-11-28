@@ -22,4 +22,5 @@ public interface TimeClient {
     void setDateAndTime(int day, int month, int year,
                                int hour, int minute, int second);
     LocalDateTime getLocalDateTime();
+    TimeClient clone (TimeClient newTimeClient) throws CloneNotSupportedException;
 }

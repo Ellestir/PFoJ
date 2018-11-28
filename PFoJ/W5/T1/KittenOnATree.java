@@ -12,7 +12,7 @@
 * Runtime: <Add runtime>
 */
 
-package T6;
+package T1;
 
 import java.util.Scanner;
 import java.util.HashMap;
